@@ -1,0 +1,64 @@
+function verificar(){
+    
+    let peso = Number(document.getElementById('txtpeso').value)
+    let altura = Number(document.getElementById('txtaltura').value)
+    let sexo = document.getElementsByName('radsexo')
+    let resultado = document.getElementById('resultadopeso')
+    var imc = peso / altura**2
+    if (peso == 0 || peso < 0 || altura < 0 || altura > 2.5){
+        window.alert('Valores incorretos ou impossiveis, Tente novamente!')
+    } else if (sexo[0].checked && imc < 18.5){
+        
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos um <strong>Homem</strong> Com <strong>Magreza</strong></p>`
+        document.body.style.background = 'blue'  
+    } else if(sexo[0].checked && imc <25) {
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos um <strong>Homem</strong> de porte <strong>Normal</strong></p>`
+        document.body.style.background = 'blue'  
+
+    } else if (sexo[0].checked && imc <30 ) {
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos um <strong>Homem</strong> Com <strong>Sobrepeso</strong></p>`
+        document.body.style.background = 'blue'   
+    }  else if (sexo[0].checked && imc <40){
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos um <strong>Homem</strong> Com <strong>Obesidade</strong></p>`
+        document.body.style.background = 'blue'   
+    }else if (sexo[0].checked && imc >=40){
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos um <strong>Homem</strong> Com <strong>Obesidade Grave</strong></p>`
+        document.body.style.background =  'blue'  
+
+    }
+    else if (sexo[1].checked && imc < 18.5){
+        
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos uma <strong>Mulher</strong> Com <strong>Magreza</strong></p>`
+        document.body.style.background = 'pink' 
+    } else if(sexo[1].checked && imc <25) {
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos uma <strong>Mulher</strong> de porte <strong>Normal</strong></p>`
+        document.body.style.background = 'pink'
+
+    } else if (sexo[1].checked && imc <30 ) {
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos uma <strong>Mulher</strong> Com <strong>Sobrepeso</strong></p>`
+        document.body.style.background = 'pink'
+    }  else if (sexo[1].checked && imc <40){
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos uma <strong>Mulher</strong> Com <strong>Obesidade</strong></p>`
+        document.body.style.background = 'pink'
+    }else if (sexo[1].checked && imc >=40){
+        resultado.innerHTML = `<p>Seu IMC Eh De <strong>${imc}</strong></p>`
+        resultado.innerHTML +=`<p>Detectamos uma <strong>Mulher</strong> Com <strong>Obesidade Grave</strong></p>`
+        document.body.style.background = 'pink'
+    }
+
+
+
+
+
+
+
+}
